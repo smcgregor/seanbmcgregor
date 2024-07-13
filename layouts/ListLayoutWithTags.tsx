@@ -6,6 +6,7 @@ import { slug } from 'github-slugger'
 import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
+import { ReactIconTitle } from '@/components/Icons'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
@@ -122,7 +123,7 @@ export default function ListLayoutWithTags({
           <div>
             <ul>
               {displayPosts.map((post) => {
-                const { path, date, title, summary, tags } = post
+                const { path, date, title, summary, tags, icon } = post
                 return (
                   <li key={path} className="py-5">
                     <article className="flex flex-col space-y-2 xl:space-y-0">
@@ -136,7 +137,11 @@ export default function ListLayoutWithTags({
                         <div>
                           <h2 className="text-2xl font-bold leading-8 tracking-tight">
                             <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
-                              {title}
+                              {
+                                  icon ?
+                                    <ReactIconTitle i={icon} /> :
+                                    ""
+                                }{title}
                             </Link>
                           </h2>
                           <div className="flex flex-wrap">

@@ -1,6 +1,7 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
+import { ReactIconTitle } from '@/components/Icons'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 
@@ -21,7 +22,7 @@ export default function Home({ posts }) {
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, date, title, summary, tags } = post
+            const { slug, date, title, summary, tags, icon } = post
             return (
               <li key={slug} className="py-12">
                 <article>
@@ -40,7 +41,11 @@ export default function Home({ posts }) {
                               href={`/blog/${slug}`}
                               className="text-gray-900 dark:text-gray-100"
                             >
-                              {title}
+                              {
+                                icon ?
+                                  <ReactIconTitle i={icon} /> :
+                                  ""
+                              }{title}
                             </Link>
                           </h2>
                           <div className="flex flex-wrap">

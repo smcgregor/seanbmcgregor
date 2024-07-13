@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog, Authors } from 'contentlayer/generated'
+import { ReactIconTitle } from '@/components/Icons'
 import Comments from '@/components/Comments'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
@@ -30,7 +31,7 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags } = content
+  const { filePath, path, slug, date, title, tags, icon } = content
   const basePath = path.split('/')[0]
 
   return (
@@ -51,7 +52,13 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 </div>
               </dl>
               <div>
-                <PageTitle>{title}</PageTitle>
+                <PageTitle>
+                {
+                  icon ?
+                    <ReactIconTitle i={icon} size={50} /> :
+                    ""
+                }{title}
+                </PageTitle>
               </div>
             </div>
           </header>

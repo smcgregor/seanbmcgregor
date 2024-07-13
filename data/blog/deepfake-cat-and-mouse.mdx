@@ -5,9 +5,12 @@ slug: DeepfakeDetectionGame
 category: security
 tags: ["deepfakes", "security", "Cat and Mouse", "GANs", "style transfer", "facebook", "machine learning"]
 summary: Video has long been a trusted source of ground truth for world events. People know images can be manipulated, but video manipulation is rare. This has changed with the advent of manipulating videos with neural networks. Automatic video manipulation tools, like those that swapped Nicolas Cage's face onto Amy Adams, are now fast, realistic, and cheap. Defending the public record requires methods for detecting these fakes. But is the deepfake detection game winnable?
-icon: fas fa-user-ninja
+icon: FaUserNinja
 image: /static/images/blog/content/deepfake_example.gif
 ---
+
+import {ReactIconLi} from "components/Icons"
+
 
 Video has long been a trusted source of ground truth for world events. People know images can be manipulated, but video manipulation is rare. This has changed with the advent of manipulating videos with neural networks. Automatic video manipulation tools, like those that swapped Nicolas Cage's face onto Amy Adams, are now fast, realistic, and cheap. Defending the public record requires methods for detecting these fakes. But is the deepfake detection game winnable?
 
@@ -47,8 +50,8 @@ People working in cryptography and computer security think in terms of formal ga
 
 These could include anyone with an interest in generating a deepfake, more specifically, they include the following **private-model adversaries**
 
-* <i class="fas fa-chess-king"></i> state propagandists
-* <i class="fas fa-hand-holding-usd"></i> stock short sellers
+* <ReactIconLi i="FaChessKing">state propagandists</ReactIconLi>
+* <ReactIconLi i="FaHandHoldingUsd">stock short sellers</ReactIconLi>
 
 In computer security, state actors are considered the most challenging adversary because they have an extensive catalog of system exploits making it possible to break into almost every connected system in the world. Where state-sponsored hacking has a collection of secret vulnerabilities, well-resourced deepfake adversaries have a set of deepfake generating models not known by the defender.
 
