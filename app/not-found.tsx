@@ -37,6 +37,22 @@ export default function NotFound() {
     redirect(redirects[pathname])
   }
 
+  if ( pathname.startsWith("/tag/") ) {
+    redirect(pathname.replace("/tag/", "/tags/").replace(".html", ""))
+  }
+
+  if ( pathname.startsWith("/archives.html") ) {
+    redirect("/blog")
+  }
+
+  if ( pathname.startsWith("/pages/vitae.html") ) {
+    redirect("/about")
+  }
+
+  if ( pathname.startsWith("/papers/") ) {
+    redirect("/static" + pathname)
+  }
+
   return (
     <div className="flex flex-col items-start justify-start md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6">
       <div className="space-x-2 pb-8 pt-6 md:space-y-5">
