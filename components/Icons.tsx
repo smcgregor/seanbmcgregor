@@ -21,11 +21,19 @@ import {
   FaUser,
   FaChessKing,
   FaHandHoldingUsd,
-  FaSortNumericDownAlt
+  FaSortNumericDownAlt,
+  FaStar,
+  FaHeart,
+  FaWrench,
+  FaGraduationCap,
+  FaOrcid,
 } from 'react-icons/fa'
+import { FaGoogleScholar, FaLinkedinIn } from "react-icons/fa6";
 import { BsOctagonFill } from "react-icons/bs";
 import { BiSolidCctv } from "react-icons/bi";
+import { PiMapPinSimpleAreaLight } from "react-icons/pi";
 import { GiSafetyPin } from "react-icons/gi";
+import { SiSemanticscholar } from "react-icons/si";
 import { createElement } from 'react';
 
 const icons = {
@@ -54,6 +62,15 @@ const icons = {
   "BiSolidCctv": BiSolidCctv,
   "FaSortNumericDownAlt": FaSortNumericDownAlt,
   "FaUser": FaUser,
+  "FaStar": FaStar,
+  "FaHeart": FaHeart,
+  "FaGraduationCap": FaGraduationCap,
+  "FaWrench": FaWrench,
+  "FaGoogleScholar": FaGoogleScholar,
+  "FaOrcid": FaOrcid,
+  "SiSemanticscholar": SiSemanticscholar,
+  "FaLinkedinIn": FaLinkedinIn,
+  "PiMapPinSimpleAreaLight": PiMapPinSimpleAreaLight,
 }
 
 
@@ -61,7 +78,7 @@ const icons = {
 // To add a new icon, add a new function here
 
 // https://react-icons.github.io/react-icons/
-export function ReactIcon({i, size}) {
+export function ReactIcon({i, size=80}) {
 
   const iconElement = createElement(
     icons[i],

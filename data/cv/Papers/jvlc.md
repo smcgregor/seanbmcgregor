@@ -1,7 +1,6 @@
 title: Interactive visualization for testing Markov Decision Processes: MDPVIS
 venue: Journal of Visual Languages and Computing
 authors: McGregor, S., Buckingham, H., Dietterich, T. G., Houtman, R., Montgomery, C., & Metoyer, R.
-bibtex: This work is pending publication.
 demo: http://mdpvis.github.io/
 year: 2017
 bibtex: @article{McGregor2016,author = {McGregor, Sean and Buckingham, Hailey and Dietterich, Thomas G. and Houtman, Rachel and Montgomery, Claire and Metoyer, Ronald},file = {:Users/smcgregor/Downloads/InteractiveVisualizationforTestingMarkovDecisionProcesses.pdf:pdf},journal = {Journal of Visual Languages and Computing},title = {{Interactive visualization for testing Markov Decision Processes: MDPVIS}},year = {2016}}

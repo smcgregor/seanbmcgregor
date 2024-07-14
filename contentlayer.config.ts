@@ -140,13 +140,45 @@ export const Authors = defineDocumentType(() => ({
     linkedin: { type: 'string' },
     github: { type: 'string' },
     layout: { type: 'string' },
+    status: { type: 'markdown'},
+    about: {type: 'markdown'},
   },
   computedFields,
 }))
 
+export const CV = defineDocumentType(() => ({
+  name: 'CV',
+  filePathPattern: 'cv/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    year: { type: 'string', required: true },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
+    draft: { type: 'boolean' },
+    citation: { type: 'string'},
+    paper: { type: 'string'},
+    hide_tags: { type: 'string'},
+    venue: { type: 'string' },
+    authors: { type: 'string' },
+    bibtex: { type: 'string' }
+  },
+  computedFields: {
+    ...computedFields,
+    structuredData: {
+      type: 'json',
+      resolve: (doc) => ({
+        '@context': 'https://schema.org',
+        '@type': 'CVEntry',
+        headline: doc.title,
+        url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+      }),
+    },
+  },
+}))
+
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Authors],
+  documentTypes: [Blog, Authors, CV],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [

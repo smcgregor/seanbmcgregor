@@ -7,6 +7,8 @@ citation: McGregor, S., Houtman, R., Montgomery, C., Metoyer, R., & Dietterich, 
 paper: /papers/RLDM.pdf
 hide_tags: cv-tag-peer-reviewed cv-tag-conference cv-tag-talk cv-tag-poster cv-tag-application cv-tag-ml cv-tag-compsust cv-tag-rl cv-tag-visualization cv-tag-safety
 
-<i class="fa fa-star" aria-hidden="true"></i> Best Paper Nomination
+import {ReactIconTitle} from "components/Icons"
+
+<ReactIconTitle i="FaStar" />Best Paper Nomination
 
 This work extends [Model-Free Monte Carlo](http://www.jmlr.org/proceedings/papers/v9/fonteneau10a/fonteneau10a.pdf) to large state space Markov Decision Processes (MDPs) by factoring the state space. We successfully generate surrogate trajectories for a large state space MDP (more than 10^1000000 states) with 8 state features. We posted an extended version of the paper to [arXiv](https://arxiv.org/abs/1703.09390).
