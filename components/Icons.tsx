@@ -27,13 +27,29 @@ import {
   FaWrench,
   FaGraduationCap,
   FaOrcid,
+  FaFacebookSquare,
+  FaChessBishop,
+  FaPersonBooth,
+  FaSkull,
+  FaUserSecret,
+  FaYoutube,
+  FaTwitterSquare,
+  FaPiedPiperHat,
+  FaGoogle,
+  FaAmazon,
+  FaMicrosoft,
+  FaNewspaper,
+  FaTv,
 } from 'react-icons/fa'
-import { FaGoogleScholar, FaLinkedinIn } from "react-icons/fa6";
+import { FaGoogleScholar, FaLinkedinIn, FaSackDollar } from "react-icons/fa6";
 import { BsOctagonFill } from "react-icons/bs";
 import { BiSolidCctv } from "react-icons/bi";
-import { PiMapPinSimpleAreaLight } from "react-icons/pi";
+import { PiMapPinSimpleAreaLight, PiVideoConferenceLight } from "react-icons/pi";
 import { GiSafetyPin } from "react-icons/gi";
-import { SiSemanticscholar } from "react-icons/si";
+import { SiSemanticscholar, SiArxiv } from "react-icons/si";
+import { HiOutlinePresentationChartBar } from "react-icons/hi";
+import { LuMousePointerClick } from "react-icons/lu";
+import { MdOutlineOndemandVideo, MdClose } from "react-icons/md";
 import { createElement } from 'react';
 
 const icons = {
@@ -71,6 +87,26 @@ const icons = {
   "SiSemanticscholar": SiSemanticscholar,
   "FaLinkedinIn": FaLinkedinIn,
   "PiMapPinSimpleAreaLight": PiMapPinSimpleAreaLight,
+  "HiOutlinePresentationChartBar": HiOutlinePresentationChartBar,
+  "PiVideoConferenceLight": PiVideoConferenceLight,
+  "SiArxiv": SiArxiv,
+  "LuMousePointerClick": LuMousePointerClick,
+  "MdOutlineOndemandVideo": MdOutlineOndemandVideo,
+  "FaFacebookSquare": FaFacebookSquare,
+  "FaChessBishop": FaChessBishop,
+  "FaPersonBooth": FaPersonBooth,
+  "FaSkull": FaSkull,
+  "FaSackDollar": FaSackDollar,
+  "FaUserSecret": FaUserSecret,
+  "FaYoutube": FaYoutube,
+  "FaTwitterSquare": FaTwitterSquare,
+  "FaPiedPiperHat": FaPiedPiperHat,
+  "FaGoogle": FaGoogle,
+  "FaAmazon": FaAmazon,
+  "FaMicrosoft": FaMicrosoft,
+  "FaNewspaper": FaNewspaper,
+  "FaTv": FaTv,
+  "MdClose": MdClose,
 }
 
 
@@ -78,31 +114,35 @@ const icons = {
 // To add a new icon, add a new function here
 
 // https://react-icons.github.io/react-icons/
-export function ReactIcon({i, size=80}) {
+export function ReactIcon({i, size=80, className="", color="white"}) {
+
+  if (icons[i] === undefined) {
+    return <>Icon Not Loaded</>
+  }
 
   const iconElement = createElement(
     icons[i],
-    { size:size }
+    {
+      size: size,
+      color: color,
+      className: className
+     }
   );
   return iconElement;
 }
 
-export function ReactIconLi({i, size=80, children}) {
-  const displayedIcon = ReactIcon({i, size})
+export function ReactIconLi({i, size=80, color="white", children}) {
+  const displayedIcon = ReactIcon({i, size, color})
   return (<div style={{display: "flex"}}>
     {displayedIcon} <span>{ }{ }{children}</span>
   </div>)
 }
 
-export function ReactIconTitle({i, size=30}) {
-  const iconElement = createElement(
-    icons[i],
-    { 
-      size:size,
-      className: "titleIcon"
-    }
-  );
-  return iconElement;
+export function ReactIconInline({i, size=30, className="inlineIcon", color="white", children=""}) {
+  const displayedIcon = ReactIcon({i, size, className, color})
+  return (
+    <>{displayedIcon}{children}</>
+  )
 }
 
 export function Facebook(svgProps: SVGProps<SVGSVGElement>) {

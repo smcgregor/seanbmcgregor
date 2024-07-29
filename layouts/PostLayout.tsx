@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog, Authors } from 'contentlayer/generated'
-import { ReactIconTitle } from '@/components/Icons'
+import { ReactIconInline } from '@/components/Icons'
 import Comments from '@/components/Comments'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
@@ -55,7 +55,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 <PageTitle>
                 {
                   icon ?
-                    <ReactIconTitle i={icon} size={50} /> :
+                    <ReactIconInline i={icon} size={50} /> :
                     ""
                 }{title}
                 </PageTitle>

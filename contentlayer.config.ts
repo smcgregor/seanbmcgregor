@@ -160,7 +160,11 @@ export const CV = defineDocumentType(() => ({
     hide_tags: { type: 'string'},
     venue: { type: 'string' },
     authors: { type: 'string' },
-    bibtex: { type: 'string' }
+    bibtex: { type: 'string' },
+    video: { type: 'string' },
+    slides: { type: 'string' },
+    poster: { type: 'string' },
+    demo: { type: 'string' }
   },
   computedFields: {
     ...computedFields,
@@ -208,7 +212,7 @@ export default makeSource({
     ],
   },
   onSuccess: async (importData) => {
-    const { allBlogs } = await importData()
+    const { allBlogs, allCVs } = await importData()
     createTagCount(allBlogs)
     createSearchIndex(allBlogs)
   },

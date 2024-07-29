@@ -1,7 +1,7 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import { ReactIconTitle } from '@/components/Icons'
+import { ReactIconInline } from '@/components/Icons'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 
@@ -55,7 +55,7 @@ export default function Home({ posts }) {
                             >
                               {
                                 icon ?
-                                  <ReactIconTitle i={icon} /> :
+                                  <ReactIconInline i={icon} /> :
                                   ""
                               }{title}
                             </Link>

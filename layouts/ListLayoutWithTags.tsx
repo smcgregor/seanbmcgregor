@@ -6,7 +6,7 @@ import { slug } from 'github-slugger'
 import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
-import { ReactIconTitle } from '@/components/Icons'
+import { ReactIconInline } from '@/components/Icons'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
@@ -139,7 +139,7 @@ export default function ListLayoutWithTags({
                             <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
                               {
                                   icon ?
-                                    <ReactIconTitle i={icon} /> :
+                                    <ReactIconInline i={icon} /> :
                                     ""
                                 }{title}
                             </Link>

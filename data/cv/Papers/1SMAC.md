@@ -1,5 +1,5 @@
 title: Fast Optimization of Wildfire Suppression Policies with SMAC
-citation: This paper is currently under review. We invite you to cite the arXiv version of the paper.
+citation: McGregor, Sean, et al. "Fast optimization of wildfire suppression policies with SMAC." arXiv preprint arXiv:1703.09391 (2017).
 authors: McGregor, S., Houtman, R., Montgomery, C., Metoyer, R., & Dietterich, T. G.
 paper: https://arxiv.org/abs/1703.09391
 venue: arXiv

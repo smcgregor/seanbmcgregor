@@ -18,7 +18,8 @@ def migrate(dirpath, filename):
                 if line == "\n" and not header_ended:
                     header_ended = True
                     outfile.write("---")
-                line = line.replace("\"", "\\\"")
+                if not header_ended:
+                    line = line.replace("\"", "\\\"")
                 filetypes = ["slides: ", "paper: ", "poster: "]
                 for filetype in filetypes:
                     if not header_ended and filetype in line:

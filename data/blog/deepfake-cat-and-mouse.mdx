@@ -8,7 +8,7 @@ icon: FaUserNinja
 images: ['/static/images/blog/content/deepfake_example.gif']
 ---
 
-import {ReactIconLi} from "components/Icons"
+import {ReactIconLi, ReactIconInline} from "components/Icons"
 
 
 Video has long been a trusted source of ground truth for world events. People know images can be manipulated, but video manipulation is rare. This has changed with the advent of manipulating videos with neural networks. Automatic video manipulation tools, like those that swapped Nicolas Cage's face onto Amy Adams, are now fast, realistic, and cheap. Defending the public record requires methods for detecting these fakes. But is the deepfake detection game winnable?
@@ -25,19 +25,19 @@ Deepfakes are a portmanteau of "Deep Learning" (i.e., the computing method creat
 
 Deepfake Detection Challenge steering committee member Claire Wardle gives an excellent introduction to the problem in general.
 
-<iframe title="New York Times Video - Embed Player" width="480" height="321" frameborder="0" scrolling="no" allowfullscreen="true" marginheight="0" marginwidth="0" id="nyt_video_player" src="https://graphics8.nytimes.com/video/players/offsite/index.html?videoId=100000006635241"></iframe>
+<iframe title="New York Times Video - Embed Player" width="480" height="321" src="https://graphics8.nytimes.com/video/players/offsite/index.html?videoId=100000006635241"></iframe>
 
 **President Obama the puppet**
 
 In this video President Obama is made to discuss deepfakes in a very uncharacteristic manner. It is a very high quality fake of considerable length voice acted by a noted Obama impersonator.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cQ54GDm1eL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cQ54GDm1eL0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
 
 **Dance puppets**
 
 In this research demonstration video, you can see the dance moves of a source getting mapped to a subject. The subject is tasked with dancing as closely as possible to the source, but their movements are far from perfect. You can see a pained look on their faces when they are made to dance like a professional ballerina.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PCBTZh41Ris" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PCBTZh41Ris" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
 
 It is now possible for individuals to programmatically create these videos in the hundreds of thousands and web platforms like Facebook, YouTube, and Twitter are concerned they will be used to harm individuals by placing them into compromising situations, or as a vector for state-sponsored propaganda. Since deepfakes are increasingly appearing in the wild with real-world politicians as their subjects, it is not difficult to imagine a nightmare scenario where deepfake goes viral immediately before polling. Consequently, Facebook is putting immense resources behind the [Deepfake Detection Challenge](https://deepfakedetectionchallenge.ai/) to subsidize deepfake detection research and tool development. We need these tools _now,_ but the value of these tools in the long run is doubtful. To explain, I am going to explain how to think in a formal way about deepfake security.
 
@@ -49,18 +49,18 @@ People working in cryptography and computer security think in terms of formal ga
 
 These could include anyone with an interest in generating a deepfake, more specifically, they include the following **private-model adversaries**
 
-* <ReactIconLi i="FaChessKing">state propagandists</ReactIconLi>
-* <ReactIconLi i="FaHandHoldingUsd">stock short sellers</ReactIconLi>
+* <ReactIconLi size={25} i="FaChessKing">state propagandists</ReactIconLi>
+* <ReactIconLi size={25} i="FaHandHoldingUsd">stock short sellers</ReactIconLi>
 
 In computer security, state actors are considered the most challenging adversary because they have an extensive catalog of system exploits making it possible to break into almost every connected system in the world. Where state-sponsored hacking has a collection of secret vulnerabilities, well-resourced deepfake adversaries have a set of deepfake generating models not known by the defender.
 
 Additionally, there are **public-model adversaries** that would make use of publicly available models,
 
-* <i class="fas fa-chess-bishop"></i> individual propagandists
-* <i class="fas fa-person-booth"></i> political operatives
-* <i class="fas fa-skull"></i> trolls
-* <i class="far fa-sack-dollar"></i> extortionists
-* <i class="fas fa-user-secret"></i> pornographers
+* <ReactIconLi size={25} i="FaChessBishop">individual propagandists</ReactIconLi>
+* <ReactIconLi size={25} i="FaPersonBooth">political operatives</ReactIconLi>
+* <ReactIconLi size={25} i="FaSkull">trolls</ReactIconLi>
+* <ReactIconLi size={25} i="FaSackDollar">extortionists</ReactIconLi>
+* <ReactIconLi size={25} i="FaUserSecret">pornographers</ReactIconLi>
 
 The distinction between the two adversary types is profound in its implications for platforms, service providers, and news organizations. I step through these defender types below.
 
@@ -68,9 +68,9 @@ The distinction between the two adversary types is profound in its implications 
 
 Platforms are purveyors of user submitted content. Some include,
 
-* <i class="fab fa-facebook-square"></i> Facebook
-* <i class="fab fa-youtube"></i> YouTube
-* <i class="fab fa-twitter-square"></i> Twitter
+* <ReactIconLi size={25} i="FaFacebookSquare">Facebook</ReactIconLi>
+* <ReactIconLi size={25} i="FaYoutube">YouTube</ReactIconLi>
+* <ReactIconLi size={25} i="FaTwitterSquare">Twitter</ReactIconLi>
 
 These platforms receive a very large number of videos from users against which deepfakes will always be rare. Any significant misclassification rate for non-deepfake content would produce millions of videos for moderation. They want detector models that have the lowest false positive rate possible (i.e., high precision), subject to detecting some proportion of the deepfakes in the population (i.e., moderate recall).
 
@@ -78,10 +78,10 @@ These platforms receive a very large number of videos from users against which d
 
 These organizations may provide deepfake detection services to third parties by exposing an API that checks submitted content. Some potential deepfake detection providers include,
 
-* <i class="fab fa-pied-piper-hat"></i> Startups
-* <i class="fab fa-google"></i> Google (labeling search results)
-* <i class="fab fa-amazon"></i> Amazon (detectors as a service)
-* <i class="fab fa-microsoft"></i> Microsoft (enterprise detectors as a service)
+* <ReactIconLi size={25} i="FaPiedPiperHat">Startups</ReactIconLi>
+* <ReactIconLi size={25} i="FaGoogle">Google (labeling search results)</ReactIconLi>
+* <ReactIconLi size={25} i="FaAmazon">Amazon (detectors as a service)</ReactIconLi>
+* <ReactIconLi size={25} i="FaMicrosoft">Microsoft (enterprise detectors as a service)</ReactIconLi>
 
 The commercial viability of this sort of business model likely hinges on properly scoping the types of adversaries addressed. As I'll explain below, these services cannot adequately address private-model adversaries.
 
@@ -89,8 +89,8 @@ The commercial viability of this sort of business model likely hinges on properl
 
 These organizations are concerned with establishing the public record via verified unmodified media. They are likely the customers of the "detectors as a service." Examples include,
 
-* <i class="fas fa-newspaper"></i> Associated Press, NY Times, Washington Post, etc.
-* <i class="fas fa-tv"></i> BBC, CBC, PBS, CNN, Fox News, etc.
+* <ReactIconLi size={25} i="FaNewspaper">Associated Press, NY Times, Washington Post, etc.</ReactIconLi>
+* <ReactIconLi size={25} i="FaTv">BBC, CBC, PBS, CNN, Fox News, etc.</ReactIconLi>
 
 I am skeptical these organizations should trust the output of any deepfake detector. I will go into why in the following sections.
 
@@ -98,50 +98,37 @@ I am skeptical these organizations should trust the output of any deepfake detec
 
 This includes everyone that may be exposed to the deepfakes in the wild.
 
-* <i class="fas fa-user"></i> All individual people
+* <ReactIconLi size={25} i="FaUser">All individual people</ReactIconLi>
 
 The adversaries are responsible for selecting the subject and method of attack, and the defender is responsible for selecting the detector models that will be monitoring content for deepfakes. When fully defining the game, we need to make assumptions of how the game is carried out,
 
 **Adversaries choose:**
 
 1. *Public/private deepfake generation model:* "models" produce the deepfakes in coordination with a person that selects the modifications made by the models. If the defender has access to the model then it is possible to use the model in detection. Since training the model is (currently) prohibitively expensive, in practice deepfake models are likely to be used by multiple adversaries. Therefore, state actors and others with strong financial incentives are the only ones likely to have private deepfake models, at least initially. Most adversaries will likely use previously trained models that are functionally public to the defender.
-     * *public:*
-     <br /><i class="fas fa-chess-bishop"></i>, <i class="fas fa-skull"></i>, <i class="fas fa-person-booth"></i>, <i class="fas fa-user-secret"></i>
-     * *private:*
-     <br /><i class="fas fa-chess-king"></i>, <i class="fas fa-hand-holding-usd"></i>
+     * *public:* <ReactIconInline size={25} i="FaChessBishop" />, <ReactIconInline size={25} i="FaSkull" />, <ReactIconInline size={25} i="FaPersonBooth" />, <ReactIconInline size={25} i="FaUserSecret" />
+     * *private:*<ReactIconInline size={25} i="FaChessKing" />, <ReactIconInline size={25} i="FaHandHoldingUsd" />
 2. *Public/private source material:* Deepfakes typically modify an existing video to have different contents. The materials used in the construction of the deepfake will often be publicly available and could be used by detector models. The completely open space of source videos from which adversaries operate likely means that assuming all source materials are private is a reasonable starting point.
     * *public:* None
-    * *private:*
-    <br /><i class="fas fa-chess-bishop"></i>, <i class="fas fa-skull"></i>, <i class="fas fa-hand-holding-usd"></i>, <i class="fas fa-person-booth"></i>, <i class="fas fa-user-secret"></i>, <i class="fas fa-chess-king"></i>
+    * *private:*<ReactIconInline size={25} i="FaChessBishop" />, <ReactIconInline size={25} i="FaSkull" />, <ReactIconInline size={25} i="FaHandHoldingUsd" />, <ReactIconInline size={25} i="FaPersonBooth" />, <ReactIconInline size={25} i="FaUserSecret" />, <ReactIconInline size={25} i="FaChessKing" />
 
 **Defenders choose:**
 
 1. *Detection model exposure:* the defender produces a model to detect the deepfake, which can then be exposed to the adversary to varying degrees. Exposure is in terms of "queries" to the model. Generally each query reduces the strength of the model since the adversary can repeatedly modify a video until it passes through the detector.
-      * *no queries by adversary:*
-      <br /><i class="fab fa-facebook-square"></i>, <i class="fab fa-youtube"></i>, <i class="fab fa-twitter-square"></i>
+      * *no queries by adversary:* <ReactIconInline size={25} i="FaFacebookSquare" />, <ReactIconInline size={25} i="FaYoutube" />, <ReactIconInline size={25} i="FaTwitterSquare" />
       <br />While the platform companies are still deciding how to roll out deepfake detection methods, it is in their interest to make the deepfake detection models completely unavailable to both their users and the adversaries hidden among them. They _can_ highlight content flagged for being a potential deepfake and use internal review processes to determine whether the content can be spread virally on the platform. They cannot give the user instant feedback into whether the content has been highlighted as a potential deepfake.
-      * *few queries:*
-      <br /><i class="fab fa-pied-piper-hat"></i>, <i class="fab fa-google"></i>, <i class="fab fa-microsoft"></i>
+      * *few queries:* <ReactIconInline size={25} i="FaPiedPiperHat" />, <ReactIconInline size={25} i="FaGoogle" />, <ReactIconInline size={25} i="FaMicrosoft" />
       <br />Companies offering API access to a deepfake detection model lose the ability to guarantee the secrecy of detector results. As a result, they cannot be as robust to probing by the adversary.
-      * *unlimited queries:*
-      <br /><i class="fas fa-user"></i>
+      * *unlimited queries:*<ReactIconInline size={25} i="FaUser" />
       <br />If the model can be directly queried by users, then adversaries can query it an unlimited number of times. Here the public interest is best served by not giving the users access to the detector model, but instead give them access to explanations of why a particular piece of content has been identified as being a deepfake. These "explainers" are premised on content being positively identified as a deepfake and can be constructed either by the moderators flagging the content, or by a model tasked with explaining the output of the detector model.
-      * *public model:*
-      <br />There is no advantage to the defenders in making the models themselves public, except to facilitate research into improving detection methods.
+      * *public model:*<br />There is no advantage to the defenders in making the models themselves public, except to facilitate research into improving detection methods.
 2. *Misclassification detection costs:* Detection models can typically be tuned according to a confidence parameter. In settings where the cost of false detection is high (e.g., when multiplied across the millions of videos being uploaded on platforms), then the confidence parameter is required to be high. In cases where the cost of asserting the legitimacy of a video is high (e.g., for a news organization), then the defender can choose to set the required confidence parameter at near certainty.
-      * *High cost for false negative:*
-      <br /><i class="fas fa-newspaper"></i>, <i class="fas fa-tv"></i>
-      * *Low cost for misclassification:*
-      <br /><i class="fab fa-facebook-square"></i>, <i class="fab fa-youtube"></i>, <i class="fab fa-twitter-square"></i>, <i class="fab fa-pied-piper-hat"></i>, <i class="fab fa-google"></i>, <i class="fab fa-amazon"></i>, <i class="fab fa-microsoft"></i>
+      * *High cost for false negative:* <ReactIconInline size={25} i="FaNewspaper" />, <ReactIconInline size={25} i="FaTv" />
+      * *Low cost for misclassification:* <ReactIconInline size={25} i="FaFacebookSquare" />, <ReactIconInline size={25} i="FaYoutube" />, <ReactIconInline size={25} i="FaTwitterSquare" />, <ReactIconInline size={25} i="FaPiedPiperHat" />, <ReactIconInline size={25} i="FaGoogle" />, <ReactIconInline size={25} i="FaAmazon" />, <ReactIconInline size={25} i="FaMicrosoft" />
 3. *Training Set Exposure:* The defenders can support deepfake detector efforts by providing deepfake training and evaluation data to the research community. Google has already done so by [publishing a dataset](http://ai.googleblog.com/2019/09/contributing-data-to-deepfake-detection.html) face swapping people in a set of videos recorded by the company. In the Deepfake Detection Challenge, training data was generated under similar circumstances and is provided to competitors. While Facebook's private user videos can not be provided to researchers, the Deepfake Detection Challenge videos are available to the public. Private-model adversaries have the resources to acquire the dataset if it is shared with multiple research teams so the data cannot be controlled through legal-system measures.
-      * *Public Training Data:* 
-      <br /><i class="fab fa-youtube"></i>, <i class="fab fa-twitter-square"></i>, <i class="fas fa-newspaper"></i>, <i class="fas fa-tv"></i>, <i class="fab fa-microsoft"></i>, <i class="fab fa-amazon"></i>
+      * *Public Training Data:* <ReactIconInline size={25} i="FaYoutube" />, <ReactIconInline size={25} i="FaTwitterSquare" />, <ReactIconInline size={25} i="FaNewspaper" />, <ReactIconInline size={25} i="FaTv" />, <ReactIconInline size={25} i="FaMicrosoft" />, <ReactIconInline size={25} i="FaAmazon" />
       * *Restricted Training Data:* None
-      <br />
-      * *Federated Training:* Federated training allows multiple organizations with private data to support training a model on the data while not providing that data externally. These organizations should develop collaborations leveraging federated training for their private data, and otherwise provide their data publicly.
-      <br /><i class="fab fa-facebook-square"></i>, <i class="fab fa-google"></i>
-      * *Private Training Data:*
-      <br /><i class="fab fa-pied-piper-hat"></i>
+      * *Federated Training:* <ReactIconInline size={25} i="FaFacebookSquare" />, <ReactIconInline size={25} i="FaGoogle" /> <br /> Federated training allows multiple organizations with private data to support training a model on the data while not providing that data externally. These organizations should develop collaborations leveraging federated training for their private data, and otherwise provide their data publicly.
+      * *Private Training Data:* <ReactIconInline size={25} i="FaPiedPiperHat" />
 
 While it is in the collective interest of the defenders to cooperate with each other in sharing training data, it is an instance of a [collective action problem](https://en.wikipedia.org/wiki/Collective_action_problem). Some organizations will not share data so they can gain competitive advantage in deepfake detection. It is of critical importance to both the research community and society more broadly that we avoid a competitive mentality in deepfake detection resources. The only potential persistent advantage held by the defender is the capacity to coordinate.
 
@@ -210,7 +197,7 @@ Deepfake detection is the bridge to a future where we have additional technologi
 
 I am bringing together an accessible explanation for the dismal state of adversarial machine learning. For a starting point, I recommend watching the following video wherein a vision classifier is tricked into recognizing a 3d printed turtle as a rifle because a specially designed texture was applied to its shell.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XaQu7kkQBPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XaQu7kkQBPc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
 
 More readings and background:
 

@@ -50,9 +50,15 @@ input:-webkit-autofill:focus {
   vertical-align: middle;
 }
 
-.titleIcon {
+.inlineIcon {
   display: inline;
   margin-right: 10px;
   position: relative;
   top: 0.0em;
+}
+
+.zoom {
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
 }
