@@ -62,29 +62,30 @@ export default function AuthorLayout({ children, content, cv }: Props) {
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-full">
             {children}
             <h1>Curriculum Vitae</h1>
-            My maintained sources about my academic and professional histories are <a href="https://scholar.google.com/citations?user=kpHcM8YAAAAJ">Google Scholar</a> and <a href="https://www.linkedin.com/in/seanbmcgregor">LinkedIn</a>, respectively. I also give a narrative of my past and present efforts below, including details on my contributions to co-authored works.
-            <h2>Presentations</h2>
-            <ul>
-              {presentations.map((entry) => {
-                //return renderCVEntry(entry)
-                return <Entry entry={entry}></Entry>
-              })}
-            </ul>
+            <p>My maintained sources about my academic and professional histories are <a href="https://scholar.google.com/citations?user=kpHcM8YAAAAJ">Google Scholar</a> and <a href="https://www.linkedin.com/in/seanbmcgregor">LinkedIn</a>, respectively. I also give a narrative of my past and present efforts below, including details on my contributions to co-authored works.</p>
+            <p><ReactIconInline size={25} i="FaStar" /> = A particular career highlight.</p>
             <h2>Papers</h2>
             <ul>
               {papers.map((entry) => {
                 return <Entry entry={entry}></Entry>
               })}
             </ul>
-            <h2>Posters</h2>
+            <h2>Book Chapters</h2>
+            <ul>
+              {chapters.map((entry) => {
+                return <Entry entry={entry}></Entry>
+              })}
+            </ul>
+            <h2>Posters without Accompanying Presentations or Papers</h2>
             <ul>
               {posters.map((entry) => {
                 return <Entry entry={entry}></Entry>
               })}
             </ul>
-            <h2>Book Chapters</h2>
+            <h2>Presentations without Accompanying Papers</h2>
             <ul>
-              {chapters.map((entry) => {
+              {presentations.map((entry) => {
+                //return renderCVEntry(entry)
                 return <Entry entry={entry}></Entry>
               })}
             </ul>
