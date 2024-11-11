@@ -45,7 +45,7 @@ function tableRow(title, val) {
 export default function Entry({entry, service=false}) {
   const [open, setOpen] = useState(false)
 
-  const {title, citation, venue, draft, year, authors} = entry;
+  const {title, citation, venue, draft, year, authors, highlight} = entry;
 
   if (draft) {
     return (<></>)
@@ -59,7 +59,7 @@ export default function Entry({entry, service=false}) {
             onClick={() => setOpen(true)}
             className="zoom relative rounded-md"
           >
-            {cite}
+            {highlight ? <ReactIconInline size={25} i="FaStar" /> : <></>}{cite}
         </a>
     <Dialog open={open} onClose={setOpen} className="relative z-10">
       <div className="fixed inset-0" />

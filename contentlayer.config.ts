@@ -155,6 +155,7 @@ export const CV = defineDocumentType(() => ({
     year: { type: 'string', required: true },
     tags: { type: 'list', of: { type: 'string' }, default: [] },
     draft: { type: 'boolean' },
+    highlight: { type: 'boolean', default: false},
     citation: { type: 'string'},
     paper: { type: 'string'},
     hide_tags: { type: 'string'},
