@@ -27,7 +27,11 @@ export default function AuthorLayout({ children, content, cv }: Props) {
   const presentations = cv.filter((entry) => entry.path.includes("Presentations")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
   const service = cv.filter((entry) => entry.path.includes("Service")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
-  const aboutContents = typeof about.html === 'string' ? about.html : about.html.outerHTML;
+  let aboutTmp = "";
+  if( about != undefined ) {
+    aboutTmp = typeof about.html === 'string' ? about.html : about.html.outerHTML;
+  }
+  const aboutContents = aboutTmp;
 
   return (
     <>
