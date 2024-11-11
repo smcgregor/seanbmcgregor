@@ -141,7 +141,7 @@ export const Authors = defineDocumentType(() => ({
     github: { type: 'string' },
     layout: { type: 'string' },
     status: { type: 'markdown'},
-    about: {type: 'markdown'},
+    about: {type: 'markdown', required: true},
   },
   computedFields,
 }))
