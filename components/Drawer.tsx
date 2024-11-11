@@ -22,7 +22,7 @@ function renderActionIcons(entry) {
             {slides ? <a href={slides}><ReactIconInline i="HiOutlinePresentationChartBar" color={activeColor}>Slides</ReactIconInline></a> : ""}
             {poster ? <a href={poster}><ReactIconInline i="PiVideoConferenceLight" color={activeColor}>Poster</ReactIconInline></a> : ""}
             {paper ? <a href={paper}><ReactIconInline i="SiArxiv" color={"black"}>Paper</ReactIconInline></a> : ""}
-            {bibtex ? <ReactIconInline i="PiMapPinSimpleAreaLight" color={activeColor}>Bibtex</ReactIconInline> : ""}
+            {/* {bibtex ? <ReactIconInline i="PiMapPinSimpleAreaLight" color={activeColor}>Bibtex</ReactIconInline> : ""} */}
           </div>
         </div>
   )
