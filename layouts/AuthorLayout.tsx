@@ -27,6 +27,8 @@ export default function AuthorLayout({ children, content, cv }: Props) {
   const presentations = cv.filter((entry) => entry.path.includes("Presentations")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
   const service = cv.filter((entry) => entry.path.includes("Service")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
+  const aboutContents = typeof about.html === 'string' ? about.html : about.html.outerHTML;
+
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -53,7 +55,7 @@ export default function AuthorLayout({ children, content, cv }: Props) {
           </div>
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
             <h1>About</h1>
-            <div dangerouslySetInnerHTML={{ __html: about?.html }} />
+            <div dangerouslySetInnerHTML={{ __html: aboutContents }} />
           </div>
         </div>
       </div>
