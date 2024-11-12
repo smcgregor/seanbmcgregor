@@ -98,7 +98,7 @@ export default function Entry({ entry, service = false }) {
     <li className="w-full">
       <button
         onClick={() => setOpen(true)}
-        className="zoom flex w-full rounded bg-transparent px-4 py-2 text-left font-bold text-pink-500 hover:text-pink-400 hover:bg-gray-500 hover:bg-opacity-20"
+        className="zoom flex w-full rounded bg-transparent px-4 py-2 text-left font-bold text-pink-500 hover:bg-gray-500 hover:bg-opacity-20 hover:text-pink-400"
       >
         {highlight ? <ReactIconInline size={25} i="FaStar" /> : <></>}
         {cite}
