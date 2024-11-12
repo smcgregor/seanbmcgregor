@@ -95,11 +95,14 @@ export default function Entry({ entry, service = false }) {
   const cite = service ? year + ':  ' + title : citation
 
   return (
-    <li>
-      <a onClick={() => setOpen(true)} className="zoom relative rounded-md">
+    <li className="w-full">
+      <button
+        onClick={() => setOpen(true)}
+        className="zoom flex w-full rounded bg-transparent px-4 py-2 text-left font-bold text-pink-500 hover:bg-gray-500 hover:bg-opacity-20"
+      >
         {highlight ? <ReactIconInline size={25} i="FaStar" /> : <></>}
         {cite}
-      </a>
+      </button>
       <Dialog open={open} onClose={setOpen} className="relative z-10">
         <div className="fixed inset-0" />
 
