@@ -5,7 +5,7 @@ const siteMetadata = {
   headerTitle: 'Sean B. McGregor',
   description: 'A blog from Sean McGregor',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://seanbmcgregor.com',
   siteRepo: 'https://github.com/smcgregor/seanbmcgregor',
   siteLogo: '/static/images/logo.png',
