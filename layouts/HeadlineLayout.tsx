@@ -41,10 +41,7 @@ export default function HeadlineLayout({ children, content }: Props) {
               Status
             </h1>
             <div dangerouslySetInnerHTML={{ __html: status?.html }} />
-            <Link
-              href={`/about`}
-              className="text-gray-900 dark:text-gray-100"
-            >
+            <Link href={`/about`} className="text-gray-900 dark:text-gray-100">
               Read more about my work
             </Link>
           </div>

@@ -13,7 +13,6 @@ import { coreContent } from 'pliny/utils/contentlayer'
 const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
-
   const author = allAuthors.find((p) => p.slug === 'default') as Authors
   const mainContent = coreContent(author)
 
@@ -53,11 +52,8 @@ export default function Home({ posts }) {
                               href={`/blog/${slug}`}
                               className="text-gray-900 dark:text-gray-100"
                             >
-                              {
-                                icon ?
-                                  <ReactIconInline i={icon} /> :
-                                  ""
-                              }{title}
+                              {icon ? <ReactIconInline i={icon} /> : ''}
+                              {title}
                             </Link>
                           </h2>
                           <div className="flex flex-wrap">

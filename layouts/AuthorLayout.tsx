@@ -9,7 +9,7 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import Entry from '@/components/Drawer'
 
-import {ReactIconLi, ReactIconInline} from "components/Icons"
+import { ReactIconLi, ReactIconInline } from 'components/Icons'
 import siteMetadata from '@/data/siteMetadata'
 
 interface Props {
@@ -21,11 +21,21 @@ interface Props {
 export default function AuthorLayout({ children, content, cv }: Props) {
   const { name, avatar, occupation, company, email, twitter, linkedin, github, about } = content
 
-  const chapters = cv.filter((entry) => entry.path.includes("Chapters")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
-  const papers = cv.filter((entry) => entry.path.includes("Papers")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
-  const posters = cv.filter((entry) => entry.path.includes("Posters")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
-  const presentations = cv.filter((entry) => entry.path.includes("Presentations")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
-  const service = cv.filter((entry) => entry.path.includes("Service")).sort((a, b) => parseInt(b.year) - parseInt(a.year));
+  const chapters = cv
+    .filter((entry) => entry.path.includes('Chapters'))
+    .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+  const papers = cv
+    .filter((entry) => entry.path.includes('Papers'))
+    .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+  const posters = cv
+    .filter((entry) => entry.path.includes('Posters'))
+    .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+  const presentations = cv
+    .filter((entry) => entry.path.includes('Presentations'))
+    .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+  const service = cv
+    .filter((entry) => entry.path.includes('Service'))
+    .sort((a, b) => parseInt(b.year) - parseInt(a.year))
 
   return (
     <>
@@ -62,8 +72,16 @@ export default function AuthorLayout({ children, content, cv }: Props) {
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-full">
             {children}
             <h1>Curriculum Vitae</h1>
-            <p>My maintained sources about my academic and professional histories are <a href="https://scholar.google.com/citations?user=kpHcM8YAAAAJ">Google Scholar</a> and <a href="https://www.linkedin.com/in/seanbmcgregor">LinkedIn</a>, respectively. I also give a narrative of my past and present efforts below, including details on my contributions to co-authored works.</p>
-            <p><ReactIconInline size={25} i="FaStar" /> = A particular career highlight.</p>
+            <p>
+              My maintained sources about my academic and professional histories are{' '}
+              <a href="https://scholar.google.com/citations?user=kpHcM8YAAAAJ">Google Scholar</a>{' '}
+              and <a href="https://www.linkedin.com/in/seanbmcgregor">LinkedIn</a>, respectively. I
+              also give a narrative of my past and present efforts below, including details on my
+              contributions to co-authored works.
+            </p>
+            <p>
+              <ReactIconInline size={25} i="FaStar" /> = A particular career highlight.
+            </p>
             <h2>Papers</h2>
             <ul>
               {papers.map((entry) => {

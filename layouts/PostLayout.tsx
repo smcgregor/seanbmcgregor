@@ -53,11 +53,8 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               </dl>
               <div>
                 <PageTitle>
-                {
-                  icon ?
-                    <ReactIconInline i={icon} size={50} /> :
-                    ""
-                }{title}
+                  {icon ? <ReactIconInline i={icon} size={50} /> : ''}
+                  {title}
                 </PageTitle>
               </div>
             </div>

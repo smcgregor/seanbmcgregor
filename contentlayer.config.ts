@@ -106,7 +106,7 @@ export const Blog = defineDocumentType(() => ({
     layout: { type: 'string' },
     bibliography: { type: 'string' },
     canonicalUrl: { type: 'string' },
-    icon: {type: 'string'}
+    icon: { type: 'string' },
   },
   computedFields: {
     ...computedFields,
@@ -140,8 +140,8 @@ export const Authors = defineDocumentType(() => ({
     linkedin: { type: 'string' },
     github: { type: 'string' },
     layout: { type: 'string' },
-    status: { type: 'markdown', required: true},
-    about: {type: 'markdown', required: true},
+    status: { type: 'markdown', required: true },
+    about: { type: 'markdown', required: true },
   },
   computedFields,
 }))
@@ -155,17 +155,17 @@ export const CV = defineDocumentType(() => ({
     year: { type: 'string', required: true },
     tags: { type: 'list', of: { type: 'string' }, default: [] },
     draft: { type: 'boolean' },
-    highlight: { type: 'boolean', default: false},
-    citation: { type: 'string'},
-    paper: { type: 'string'},
-    hide_tags: { type: 'string'},
+    highlight: { type: 'boolean', default: false },
+    citation: { type: 'string' },
+    paper: { type: 'string' },
+    hide_tags: { type: 'string' },
     venue: { type: 'string' },
     authors: { type: 'string' },
     bibtex: { type: 'string' },
     video: { type: 'string' },
     slides: { type: 'string' },
     poster: { type: 'string' },
-    demo: { type: 'string' }
+    demo: { type: 'string' },
   },
   computedFields: {
     ...computedFields,
