@@ -71,7 +71,6 @@ export default function AuthorLayout({ children, content, cv }: Props) {
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-full">
             {children}
-            <h1>Curriculum Vitae</h1>
             <p>
               My maintained sources about my academic and professional histories are{' '}
               <a href="https://scholar.google.com/citations?user=kpHcM8YAAAAJ">Google Scholar</a>{' '}
