@@ -46,6 +46,10 @@ export default function NotFound() {
     redirect('/blog')
   }
 
+  if (pathname.startsWith('/pages/about.html')) {
+    redirect('/about')
+  }
+
   if (pathname.startsWith('/pages/vitae.html')) {
     redirect('/about')
   }

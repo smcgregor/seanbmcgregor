@@ -13,7 +13,7 @@ module.exports = () => {
   return plugins.reduce((acc, next) => next(acc), {
     output: "export",  // <=== enables static exports
     reactStrictMode: true,
-    basePath: "/seanbmcgregor",
+    basePath: "",
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
