@@ -85,32 +85,32 @@ export default function AuthorLayout({ children, content, cv }: Props) {
             <h2>Papers</h2>
             <ul>
               {papers.map((entry) => {
-                return <Entry entry={entry}></Entry>
+                return <Entry key={entry.citation} entry={entry}></Entry>
               })}
             </ul>
             <h2>Book Chapters</h2>
             <ul>
               {chapters.map((entry) => {
-                return <Entry entry={entry}></Entry>
+                return <Entry key={entry.citation} entry={entry}></Entry>
               })}
             </ul>
             <h2>Posters without Accompanying Presentations or Papers</h2>
             <ul>
               {posters.map((entry) => {
-                return <Entry entry={entry}></Entry>
+                return <Entry key={entry.citation} entry={entry}></Entry>
               })}
             </ul>
             <h2>Presentations without Accompanying Papers</h2>
             <ul>
               {presentations.map((entry) => {
                 //return renderCVEntry(entry)
-                return <Entry entry={entry}></Entry>
+                return <Entry key={entry.citation} entry={entry}></Entry>
               })}
             </ul>
             <h2>Service</h2>
             <ul>
               {service.map((entry) => {
-                return <Entry entry={entry} service={true}></Entry>
+                return <Entry key={entry.title} entry={entry} service={true}></Entry>
               })}
             </ul>
           </div>
