@@ -1,0 +1,77 @@
+---
+title: "Alignment Is Not All You Need for Incident Investigations"
+date: 2026-09-15 10:00
+tags: ["Machine Learning", "AI", "Safety", "Incidents", "Alignment"]
+summary: AI incident investigations are drifting toward explaining the spark rather than interrogating the complex assemblage of human, system, and organizational failures inviting catastrophe.
+icon: FaFireAlt
+images: ['/static/images/blog/content/incident-investigations/beirut-explosion.jpg']
+---
+
+<figure>
+  <a target="_blank" href="/static/images/blog/content/incident-investigations/beirut-explosion.jpg">
+    <img
+      style={{ maxWidth: 600 }}
+      width="100%"
+      alt="Destroyed grain silos and flattened wreckage at the Port of Beirut"
+      src="/static/images/blog/content/incident-investigations/beirut-explosion.jpg"
+    />
+  </a>
+  <figcaption>
+    Photo of 2020 Beirut port explosion aftermath. Courtesy of <a target="_blank" href="https://www.flickr.com/photos/prachatai/50228810618/">Prachatai</a>.
+  </figcaption>
+</figure>
+
+When the Port of Beirut [exploded](https://www.youtube.com/shorts/Vb8EXpZb7P4) in August 2020, killing more than two hundred people, we wanted to know why it happened. However, of all the answers that could explain why it happened, the spark is among the least informative. <u>Nearly three thousand tonnes of ammonium nitrate had sat in a warehouse for six years</u>. Thousands of tonnes of explosives... Sitting in a highly populated area... _For years!_ A spark was [inevitable](https://www.youtube.com/watch?v=3bY0unjZ5Kw).
+
+Similarly, _AI incident investigations are drifting toward explaining the spark rather than interrogating the complex assemblage of human, system, and organizational failures inviting catastrophe._
+
+Recent incidents, wherein models built to zealously pursue their goals successfully hacked companies, are becoming subject to voluntary [high-profile independent investigations](https://www.nytimes.com/2026/09/03/technology/openai-hugging-face-hack.html). But what type of investigation? There is an incipient split within the community separating two scopes of investigations: incident and alignment investigations.
+
+> Definition 1. **_Incident Investigation_.** A process to (1) determine the facts, conditions, and circumstances relating to an accident; (2) determine one or more probable causes; and (3) issue safety recommendations to prevent or mitigate the effects of a similar accident.
+>
+> -- [NTSB](https://www.ntsb.gov/about/organization/AS/Pages/aviation-classification.aspx)
+
+> Definition 2. **Alignment.** AI system fidelity to a person's or group's intended goals, preferences, or ethical principles.
+>
+> -- Adapted from Russell, Stuart J.; Norvig, Peter (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. pp. 5, 1003. ISBN 978-0-13-461099-3.
+
+> Definition 3. **_Alignment Investigation_.** An investigation of how and why a system contradicts the intended goals, safety constraints, or ethical principles of its creators or users.
+>
+> -- Working definition
+
+<figure>
+  <a target="_blank" href="/static/images/blog/content/incident-investigations/investigation-scopes.png">
+    <img
+      style={{ maxWidth: 600 }}
+      width="100%"
+      alt="Diagram mapping the three investigative questions to incident investigation questions, each of which contains a narrower alignment investigation question"
+      src="/static/images/blog/content/incident-investigations/investigation-scopes.png"
+    />
+  </a>
+  <figcaption>
+    Figure 1. System alignment can be viewed as a final line of defense that only fails due to many upstream decisions made by the humans producing the system. Asking broader questions contextualizing the system as a composition of human and machine decisions expands the response toolset and ultimately produces better aligned and controlled systems.
+  </figcaption>
+</figure>
+
+To be clear, alignment investigations are a good starting point and METR+Redwood Research have done [incredible work](https://metr.org/hugging-face-incident-report-aug-2026.pdf) in this regard. I have spent years of my life on similar alignment problems. My [doctoral dissertation](/static/papers/WildfireAssistant.pdf) was motivated by solving an alignment problem. I previously founded (and sold) a corporation named [Alignment Labs](https://alignmentlabs.ai/). Alignment is important! We need more alignment research.
+
+But the frame of "AI incident investigation" must not be limited to the frame of "alignment investigations." Otherwise, we may come to believe it is sufficient to stop the spark and ignore the pile of explosives. We may neglect to interrogate the thousands of upstream design, training, and control decisions within a broader operating context that allowed for a pile of "explosives" to sit unattended.
+
+Was [Incident 1604](https://incidentdatabase.ai/cite/1604/) ("OpenAI Models Reportedly Compromised Hugging Face Production Infrastructure During Cybersecurity Evaluation") an alignment failure? Certainly. **But let's not treat such failures as unfortunate birthing foibles of the forthcoming well-aligned superintelligence.** We can make better systems that are not subject to this sort of alignment failure. Incident investigations can show us the way if we scope them adequately. That scope <u>must</u> include answers to the three questions of incident investigations: what are the facts, what are the causes, and what should be done to prevent it from happening again. Alignment is not all you need to answer these questions.
+
+| Port Explosion | Non-Alignment Incident 1604 Equivalent |
+| --- | --- |
+| Is the fertilizer worth the risk of explosion? | Can we learn enough from the experiment to justify the risks? |
+| Would another material serve as adequate fertilizer without the associated risk of explosion? | Could this system be built in a way eliminating the need for complex probabilistic alignment? |
+| Was the port designed to safely house the fertilizer? | Did the system's runtime conform to any articulated security standard? |
+| Did the port have a responsible party for the safety of the fertilizer storage? | Was anyone at the company responsible for monitoring the evaluation? |
+| Why was the explosive material not broken up into multiple smaller stockpiles? | Why did the containers not contain the system? |
+| How should port operations change to avoid explosive stockpiles? | What should the company do to avoid a repeat of the incident in the future beyond making a better aligned system? |
+| Who will make sure it doesn't happen again? | Who will make sure it doesn't happen again? |
+| ... | ... |
+
+Table 1. Example questions that are not necessarily asked when interrogating the alignment of a system.
+
+## Acknowledgements
+
+Thank you to Patricia Paskal, Miles Brundage, Simon Mylius, and Daniel Atherton for their helpful feedback when writing this blog post.
